@@ -29,7 +29,7 @@ class BaseVersionResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->label('Base Version'),
+                TextInput::make('name')->label('Base Version')->unique(),
                 DatePicker::make('update_date')->label('Update Date'),
                 Textarea::make('change_log')->label('Change Log')
             ]);

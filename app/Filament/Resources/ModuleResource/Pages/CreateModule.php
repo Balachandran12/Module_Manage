@@ -9,4 +9,10 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateModule extends CreateRecord
 {
     protected static string $resource = ModuleResource::class;
+
+    protected function afterCreate($record): void
+    {
+        $record = $this->getRecord();
+        
+    }
 }

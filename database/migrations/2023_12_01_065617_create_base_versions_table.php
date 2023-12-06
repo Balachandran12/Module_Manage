@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('base_versions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->date('update_date');
             $table->text('change_log');
             $table->timestamps();

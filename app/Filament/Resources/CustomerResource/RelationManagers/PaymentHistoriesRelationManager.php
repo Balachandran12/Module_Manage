@@ -51,7 +51,7 @@ class PaymentHistoriesRelationManager extends RelationManagersRelationManager
                     ->label('Payment date')
                     ->date()->searchable()
                     ->sortable(),
-                TextColumn::make('amount')->label('Amount')->searchable()->sortable(),
+                TextColumn::make('amount')->money('USD')->label('Amount')->searchable()->sortable(),
                 TextColumn::make('provider')->label('Provider')->searchable()->sortable(),
                 TextColumn::make('method')->label('Method')
 
