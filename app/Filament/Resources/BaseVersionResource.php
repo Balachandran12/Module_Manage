@@ -29,9 +29,9 @@ class BaseVersionResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->label('Base Version')->unique(),
-                DatePicker::make('update_date')->label('Update Date'),
-                Textarea::make('change_log')->label('Change Log')
+                TextInput::make('name')->label('Base version')->unique(),
+                DatePicker::make('update_date')->label('Update date'),
+                Textarea::make('change_log')->label('Change log')
             ]);
     }
 
@@ -39,8 +39,8 @@ class BaseVersionResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label('Base Version'),
-                TextColumn::make('update_date')->label('Update Date'),
+                TextColumn::make('name')->label('Base version'),
+                TextColumn::make('update_date')->label('Update date'),
             ])
             ->filters([
                 //

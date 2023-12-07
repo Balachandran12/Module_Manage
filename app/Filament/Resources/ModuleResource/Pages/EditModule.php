@@ -16,4 +16,5 @@ class EditModule extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
 }

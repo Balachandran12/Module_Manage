@@ -13,7 +13,7 @@ class ListBaseVersions extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make()->createAnother(false),
+            Actions\CreateAction::make()->label('New Base Version')->createAnother(false),
         ];
     }
 }

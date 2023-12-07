@@ -10,6 +10,8 @@ class CreateModuleManagement extends CreateRecord
 {
     protected static string $resource = ModuleManagementResource::class;
 
+    protected ?string $heading = 'Update Module Management';
+
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

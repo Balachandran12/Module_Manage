@@ -13,6 +13,7 @@ class CreateModule extends CreateRecord
     protected function afterCreate($record): void
     {
         $record = $this->getRecord();
+
         
     }
 }

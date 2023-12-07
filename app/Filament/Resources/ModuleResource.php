@@ -21,9 +21,11 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Carbon\Carbon;
 use Closure;
+use Filament\Actions\Action;
+use Filament\Forms\Components\Actions\Action as ActionsAction;
+use Filament\Forms\Components\Grid;
 use Filament\Forms\Get;
-
-
+use Filament\Tables\Actions\Action as TablesActionsAction;
 
 class ModuleResource extends Resource
 {
@@ -39,17 +41,6 @@ class ModuleResource extends Resource
             ->schema([
                 TextInput::make('name')->label('Module')->unique(),
                 TextInput::make('version')->label('Version')->required(),
-                // ->rules([
-                //     fn (Get $get): Closure => function (string $attribute, $value, Closure $fail) use ($get){
-                //         // dd($get('modules_id'),$get('version'));
-                //         if($get('modules_id')){
-                //         $ranom = ModuleManagement::find($get('modules_id'));
-                //         if ($ranom->version == $get('version')) {
-                //             $fail("The Version is already here.");
-                //         }
-                //     }
-                //     }
-                // ]),
                 Select::make('base_versions_id')->required()->label('Minimum version')->options( BaseVersion::pluck('name','id') ),
                 DatePicker::make('released_date')->required()->label('Released Date')->minDate(Carbon::now()),
                 Textarea::make('change_log')->required()->label('Description'),
@@ -66,8 +57,31 @@ class ModuleResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                
             ])
+            // ->headerActions([
+            //     TablesActionsAction ::make('New module')->form([
+            //         Grid::make(2)
+            //     ->schema([
+            //         TextInput::make('name')->label('Module')->unique(),
+            //         TextInput::make('version')->label('Version')->required(),
+            //         Select::make('base_versions_id')->required()->label('Minimum version')->options( BaseVersion::pluck('name','id') ),
+            //         DatePicker::make('released_date')->required()->label('Released Date')->minDate(Carbon::now()),
+            //         Textarea::make('change_log')->required()->label('Description'),
+            //     ])
+            //     ])->action(function ($data,$record): void {
+            //         $module = Module::create([
+            //             'name' => $data['name'],
+            //         ]);
+            //         ModuleManagement::create([
+            //             'modules_id' =>$module->id,
+            //             'version' =>$data['version'],
+            //             'base_versions_id'=>$data['base_versions_id'],
+            //             'released_date'=>$data['released_date'],
+            //             'change_log'=>$data['change_log'],
+            //         ]);
+            //     }),
+            // ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
