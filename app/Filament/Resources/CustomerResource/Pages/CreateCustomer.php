@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 class CreateCustomer extends CreateRecord
 {
     protected static string $resource = CustomerResource::class;
+    
+    protected ?string $heading = 'Add New Customer';
 
     public $length =25;
     

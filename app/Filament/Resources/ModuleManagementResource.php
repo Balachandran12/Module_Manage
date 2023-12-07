@@ -30,6 +30,7 @@ class ModuleManagementResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
+    protected static ?string $modelLabel = 'Module Management';
     // public $values=[];
 
     public static function form(Form $form): Form

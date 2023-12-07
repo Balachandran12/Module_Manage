@@ -21,11 +21,12 @@ class VersionHistoryResource extends Resource
 
     protected static ?string $navigationLabel = 'Version History';
 
-    protected static ?string $modelLabel = 'Version History';
-
     protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
 
     protected static ?int $navigationSort = 4;
+
+    protected static ?string $modelLabel = 'Version Histor';
+
 
     public static function form(Form $form): Form
     {

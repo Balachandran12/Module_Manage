@@ -84,7 +84,7 @@ class CustomerResource extends Resource
                 ->hiddenOn('edit')
                 ->relationship('purchasedModules')
                 ->schema([
-                    Select::make('module_management_id')->options(
+                    Select::make('module_management_id')->label('Module Name')->options(
                         // Module::pluck('name', 'id')
                         ModuleManagement::with('module')->get()->unique('modules_id')->pluck('module.name','id')
 
@@ -103,7 +103,7 @@ class CustomerResource extends Resource
                        
                     }
                 ),
-                    DatePicker::make('date_of_purchased')->label('Date of purchased')->required(),
+                    DatePicker::make('date_of_purchased')->label('Purchased date')->required(),
                     // TextInput::make('license'),
                 ])->columns(2),
                 Section::make('Payment History')
