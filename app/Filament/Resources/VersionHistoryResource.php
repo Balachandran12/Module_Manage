@@ -25,7 +25,9 @@ class VersionHistoryResource extends Resource
 
     protected static ?int $navigationSort = 4;
 
-    protected static ?string $modelLabel = 'Version Histor';
+    protected static ?string $modelLabel = 'Version History';
+
+
 
 
     public static function form(Form $form): Form

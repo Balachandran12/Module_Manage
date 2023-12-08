@@ -19,13 +19,12 @@ class StatsOverview extends BaseWidget
         $paymemt = PaymentHistory::all();
         $sum =0;
         foreach($paymemt as $paymemts){
-            // dd($paymemts->amount);
             $sum += $paymemts->amount;
         }
         return [
-            Stat::make('Total Revenue', '$'.$sum),
-            Stat::make('Total customer', count($count)),
-            Stat::make('Total Modules', count($module)),
+            Stat::make('Revenue Generated', '$'.$sum),
+            Stat::make('Total Number Of Customer', count($count)),
+            Stat::make('Total Number Of Modules', count($module)),
         ];
     }
 }

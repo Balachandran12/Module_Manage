@@ -21,7 +21,7 @@ class ModuleCharts extends ApexChartWidget
      *
      * @var string|null
      */
-    protected static ?string $heading = 'Total Customer';
+    protected static ?string $heading = 'Total Number Of Customer';
 
     /**
      * Chart options (series, labels, types, size, animations...)

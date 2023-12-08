@@ -23,11 +23,11 @@ class ModuleCustomer extends ApexChartWidget
      *
      * @var string|null
      */
-    protected static ?string $heading = 'ModulePurchaseChart';
+    protected static ?string $heading = 'Module Purchase Chart';
     public ?string $filter = '0';
     protected function getFilters(): ?array
     {
-        $modules[0] = 'Select an Option';
+        $modules[0] = 'Select Modules';
         $modul = Module::all();
         foreach($modul as $value){
             $modules[$value->id] = $value->name;
@@ -35,6 +35,7 @@ class ModuleCustomer extends ApexChartWidget
         // dd($modules);
         return $modules;
     }
+    
     public $months;
     /**
      * Chart options (series, labels, types, size, animations...)
@@ -42,6 +43,7 @@ class ModuleCustomer extends ApexChartWidget
      *
      * @return array
      */
+
     public $activeFilter;
     protected function getOptions(): array
     {

@@ -10,6 +10,8 @@ class ListModuleManagement extends ListRecords
 {
     protected static string $resource = ModuleManagementResource::class;
 
+    protected static ?string $title = 'Module Management';
+
     protected function getHeaderActions(): array
     {
         return [

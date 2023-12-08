@@ -9,6 +9,8 @@ use Filament\Resources\Pages\ListRecords;
 class ListVersionHistories extends ListRecords
 {
     protected static string $resource = VersionHistoryResource::class;
+    
+    protected static ?string $title = 'Version History';
 
     protected function getHeaderActions(): array
     {
