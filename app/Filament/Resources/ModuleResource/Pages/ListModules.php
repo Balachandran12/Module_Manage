@@ -14,7 +14,7 @@ class ListModules extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make()->label('Add New Module')->createAnother(false)->after(function($record,$data){
+Actions\CreateAction::make()->label('Add New Module')->createAnother(false) ->after(function($record,$data){
                 ModuleManagement::create([
                     'modules_id' =>$record->id,
                     'version' =>$data['version'],

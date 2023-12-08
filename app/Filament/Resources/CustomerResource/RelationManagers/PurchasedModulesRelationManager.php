@@ -27,9 +27,6 @@ class PurchasedModulesRelationManager extends RelationManagersRelationManager
 {
     protected static string $relationship = 'purchasedModules';
 
-    public function aftersave(){
-        dd(1);
-    }
     public function form(Form $form): Form
     {
         return $form
