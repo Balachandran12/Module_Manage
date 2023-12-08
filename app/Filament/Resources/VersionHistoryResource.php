@@ -69,7 +69,7 @@ class VersionHistoryResource extends Resource
         return [
             'index' => Pages\ListVersionHistories::route('/'),
             // 'create' => Pages\CreateVersionHistory::route('/create'),
-            'edit' => Pages\EditVersionHistory::route('/{record}/edit'),
+            // 'edit' => Pages\EditVersionHistory::route('/{record}/edit'),
         ];
     }
 }
