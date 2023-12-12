@@ -88,7 +88,7 @@ class PurchasedModulesRelationManager extends RelationManagersRelationManager
                     ->formatStateUsing(function (Model $record) {
                         return '*****' . substr($record->license, 5);
                     })
-                    ->copyable()
+                    // ->copyable()
                     ->copyMessage('Copied')
                     ->copyMessageDuration(1500)
             // Copy::make('license')->view('tables.columns.copy')
