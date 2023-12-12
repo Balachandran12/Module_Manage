@@ -83,13 +83,15 @@ class PurchasedModulesRelationManager extends RelationManagersRelationManager
                     ->label('Purchased Date')
                     ->date()
                     ->sortable(),
-            // Tables\Columns\TextColumn::make('license')->label('License')
-            // ->state(function (Model $record) {
-            //     return 'ji';
-            // })->copyable()
-            // ->copyMessage('Copied')
-            // ->copyMessageDuration(1500),
-            Copy::make('license')->view('tables.columns.copy')
+                    Tables\Columns\TextColumn::make('license')
+                    ->label('License')
+                    ->formatStateUsing(function (Model $record) {
+                        return '*****' . substr($record->license, 5);
+                    })
+                    ->copyable()
+                    ->copyMessage('Copied')
+                    ->copyMessageDuration(1500)
+            // Copy::make('license')->view('tables.columns.copy')
             ])
             ->filters([
                 //
