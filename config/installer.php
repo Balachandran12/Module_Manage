@@ -9,18 +9,18 @@ use Shipu\WebInstaller\Rules\DatabaseConnectionRule;
 
 return [
 
-    'name' => 'Laravel Web Installer',
+    'name' => 'Module Management Installer',
 
     'user_model' => \App\Models\User::class,
 
     'steps' => [
-        // ServerRequirementFields::class,
+        ServerRequirementFields::class,
         FolderPermissionStep::class,
         // EnvironmentFields::class,
         ApplicationFields::class,
     ],
 
-    'redirect_route' => "welcome",
+    'redirect_route' => "/",
 
     'installation_manager' => InstallationManager::class,
     /*
