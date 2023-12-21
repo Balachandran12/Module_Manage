@@ -40,7 +40,7 @@ class ModuleResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->label('Module')->unique(),
+                TextInput::make('name')->label('Module')->unique()->required(),
                 TextInput::make('version')->label('Version')->required()->hiddenOn('edit'),
                 Select::make('base_versions_id')->required()->hiddenOn('edit')->label('Minimum version')->options( BaseVersion::pluck('name','id') ),
                 DatePicker::make('released_date')->required()->hiddenOn('edit')->label('Released Date'),

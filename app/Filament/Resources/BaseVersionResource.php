@@ -31,7 +31,7 @@ class BaseVersionResource extends Resource
             ->schema([
                 TextInput::make('name')->label('Base version')->unique()->required(),
                 DatePicker::make('update_date')->label('Update date')->required(),
-                Textarea::make('change_log')->label('Change log')->required(),
+                Textarea::make('change_log')->label('Change log'),
             ]);
     }
 
