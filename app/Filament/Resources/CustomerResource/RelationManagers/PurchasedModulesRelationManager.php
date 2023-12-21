@@ -31,7 +31,7 @@ class PurchasedModulesRelationManager extends RelationManagersRelationManager
     {
         return $form
             ->schema([
-                    Select::make('module_management_id')->options(
+                    Select::make('module_management_id')->label('Module Name')->options(
                         function($record){
                             $purchasedModules = PurchasedModule::where('customer_id', $this->ownerRecord->id)
                     ->with('ModuleManagement')

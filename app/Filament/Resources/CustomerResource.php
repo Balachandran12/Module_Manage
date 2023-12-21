@@ -133,7 +133,7 @@ class CustomerResource extends Resource
                 TextColumn::make('name')->label('Name'),
                 TextColumn::make('email_address')->label('Email address'),
                 TextColumn::make('baseVersions.name')->label('Version'),
-                TextColumn::make('')->label('Date of purchased')->date()->default(function($record){
+                TextColumn::make('')->label('Purchased date')->date()->default(function($record){
                    $rean =  PurchasedModule::where('customer_id',$record->id)->latest()->first();
                    if($rean == null){
                     return null;
