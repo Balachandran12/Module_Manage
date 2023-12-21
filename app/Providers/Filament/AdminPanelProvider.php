@@ -58,14 +58,15 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                \Shipu\WebInstaller\Middleware\RedirectIfNotInstalled::class,
             ])
             // ->navigationItems([
             //     NavigationItem::make('Analytics')
             //         ->url('/admin/version-histories', shouldOpenInNewTab: true)
             //         ->icon('heroicon-o-presentation-chart-line')
-                 
+
             //         ->sort(3),
-             
+
             // ])
             ->authMiddleware([
                 Authenticate::class,
