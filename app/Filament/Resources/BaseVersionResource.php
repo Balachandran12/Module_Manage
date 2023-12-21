@@ -29,9 +29,9 @@ class BaseVersionResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->label('Base version')->unique(),
-                DatePicker::make('update_date')->label('Update date'),
-                Textarea::make('change_log')->label('Change log')
+                TextInput::make('name')->label('Base version')->unique()->required(),
+                DatePicker::make('update_date')->label('Update date')->required(),
+                Textarea::make('change_log')->label('Change log')->required(),
             ]);
     }
 

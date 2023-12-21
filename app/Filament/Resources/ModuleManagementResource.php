@@ -54,9 +54,10 @@ class ModuleManagementResource extends Resource
                         // }
                     }
                     }
-                ]),
+                ])->hiddenOn('edit'),
+                TextInput::make('version')->label('Version')->required()->hiddenOn('create'),
                 Select::make('base_versions_id')->required()->relationship('baseVersion','name')->label('Minimum version'),
-                DatePicker::make('released_date')->required()->label('Released Date')->minDate(Carbon::now()),
+                DatePicker::make('released_date')->required()->label('Released Date'),
                 Textarea::make('change_log')->required()->label('Change log'),
             ]);
     }

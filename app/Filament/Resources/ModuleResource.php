@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Carbon\Carbon;
 use Closure;
 use Filament\Actions\Action;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\Actions\Action as ActionsAction;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Get;
@@ -40,10 +41,10 @@ class ModuleResource extends Resource
         return $form
             ->schema([
                 TextInput::make('name')->label('Module')->unique(),
-                TextInput::make('version')->label('Version')->required(),
-                Select::make('base_versions_id')->required()->label('Minimum version')->options( BaseVersion::pluck('name','id') ),
-                DatePicker::make('released_date')->required()->label('Released Date')->minDate(Carbon::now()),
-                Textarea::make('change_log')->required()->label('Description'),
+                TextInput::make('version')->label('Version')->required()->hiddenOn('edit'),
+                Select::make('base_versions_id')->required()->hiddenOn('edit')->label('Minimum version')->options( BaseVersion::pluck('name','id') ),
+                DatePicker::make('released_date')->required()->hiddenOn('edit')->label('Released Date'),
+                Textarea::make('change_log')->required()->hiddenOn('edit')->label('Description'),
             ]);
     }
 
@@ -57,7 +58,7 @@ class ModuleResource extends Resource
                 //
             ])
             ->actions([
-                
+                Tables\Actions\EditAction::make()->modalHeading('Edit Module Name'),
             ])
             // ->headerActions([
             //     TablesActionsAction ::make('New module')->form([

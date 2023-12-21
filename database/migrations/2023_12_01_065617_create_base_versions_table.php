@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->date('update_date');
-            $table->text('change_log');
+            $table->text('change_log')->nullable()->default(null);
             $table->timestamps();
         });
     }
